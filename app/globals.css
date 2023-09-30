@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sick-leave-box {
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search-text-field {
+  background-image: url("../public/assets/search-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.MuiPickersCalendarHeader-root {
+  background-color: white;
+}
+
+.MuiDateCalendar-root {
+  background-color: white;
+}
+
+.MuiTextField-root {
+}
+
+.MuiFilledInput-root {
+  padding: 0;
+  border: none;
+}
