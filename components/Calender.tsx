@@ -17,7 +17,7 @@ const Calender = () => {
                 ' .MuiDayCalendar-slideTransition': {
 
                     backgroundColor: 'white',
-                    minHeight: '231px',
+                    // minHeight: '231px',
 
 
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { Box } from '@mui/material'
+import { Box, Checkbox, FormControlLabel, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 import fileCrossIcon from '../public/assets/file-cross.svg'
@@ -43,17 +43,20 @@ const ApplicationForm = () => {
         setVacation(event.target.value);
     };
 
+    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
     return (
-        <form className='pb-12 '>
+        <form className='pb-12 application-form'>
             <div className="mb-16">
-                <h3 className="mb-1">Application Form</h3>
-                <p>Please fill the below form to apply</p>
+                <Typography variant='h5' sx={{ marginBottom: '8px', fontSize: '20px', fontWeight: '500' }}>Application Form</Typography>
+                <Typography variant='subtitle1'>Please fill the below form to apply</Typography>
+
             </div>
-            <Box className="grid grid-cols-12 gap-12 mb-16">
+            <div className="flex  mb-16 gap-12" >
                 {/* Form input field */}
-                <div className='col-span-7'>
+                <div className='flex flex-col justify-between '>
                     {/* Form All input field */}
-                    <div className="flex justify-between mb-[34px]">
+                    <div className="flex gap-[34px] ">
                         <label htmlFor="vacation">
                             Leave Type <span className="text-[#FF5449]">*</span>
                         </label>
@@ -77,21 +80,25 @@ const ApplicationForm = () => {
                     </div>
 
 
-                    <div className="flex justify-between mb-[34px]">
+                    <div className="flex justify-between ">
                         <label htmlFor="from-date">
                             From Date <span className="text-[#FF5449]">*</span>
                         </label>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}  >
-                            <DemoContainer components={['DatePicker']} sx={{ paddingTop: '0' }}>
-                                <DatePicker value={value}
-                                    onChange={(newValue) => setValue(newValue)} sx={{ width: '295px', backgroundColor: "white" }} />
-                            </DemoContainer>
-                        </LocalizationProvider>
+                        <div>
+                            <LocalizationProvider dateAdapter={AdapterDayjs}  >
+                                <DemoContainer components={['DatePicker']} sx={{ paddingTop: '0' }}>
+                                    <DatePicker value={value}
+                                        onChange={(newValue) => setValue(newValue)} sx={{ width: '295px', backgroundColor: "white" }} />
+                                </DemoContainer>
+
+                            </LocalizationProvider>
+                            <FormControlLabel control={<Checkbox />} label="One day only" />
+                        </div>
+
                     </div>
 
 
-
-                    <div className="flex justify-between mb-[34px]">
+                    <div className="flex justify-between ">
                         <label htmlFor="from-date">
                             To Date <span className="text-[#FF5449]">*</span>
                         </label>
@@ -103,7 +110,7 @@ const ApplicationForm = () => {
                         </LocalizationProvider>
                     </div>
 
-                    <div className="flex justify-between mb-[34px]">
+                    <div className="flex justify-between ">
                         <label htmlFor="vacation">
                             Day Part <span className="text-[#FF5449]">*</span>
                         </label>
@@ -128,41 +135,42 @@ const ApplicationForm = () => {
                 </div>
 
                 {/* Calender */}
-                <div className='gol-span-5'>
+                <div className=''>
                     <Calender />
                 </div>
-            </Box>
+            </div>
 
             {/* Upload document area */}
             <div>
                 <p className="mb-4">Upload Document</p>
 
-                <div className="flex gap-4">
+                <div className="flex gap-8">
 
-                    <div className="py-8 px-10 border-2 border-dashed border-[#AFC6FF] bg-[#FEFBFF] text-center cursor-pointer">
+                    {/* Upload document submit area */}
+                    <div className="border-2 py-8 px-10 border-dashed border-[#AFC6FF] bg-[#FEFBFF] text-center cursor-pointer">
                         {/* <Image src={dragDrop} alt="" className='inline-block' /> */}
-                        <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} sx={{ marginBottom: '8px', }}>
+                        <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} sx={{ marginBottom: '8px' }}>
                             Upload file
                             <VisuallyHiddenInput type="file" />
                         </Button>
-                        <h3>Drag & drop files</h3>
-                        <p>
+                        <h3 className='mb-1 text-[14px] font-semibold'>Drag & drop files</h3>
+                        <Typography variant='subtitle1' color='gray' fontSize='12px'>
                             Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD,
                             AI, Word, PPT
-                        </p>
+                        </Typography>
                     </div>
 
                     {/* uploaded files preview */}
-                    <div className="file-preview-area flex justify-between self-end gap-4">
-                        <div className="file-preview-1 bg-white border-2 rounded-sm py-[15px] pr-[21px] pl-[23px] text-center cursor-pointer">
+                    <div className=" flex gap-4 self-end ">
+                        <div className="py-4 bg-white border-2 rounded-sm  text-center cursor-pointer">
                             <Image src={fileCrossIcon} alt="" className="inline-block" />
                             <p>your-file-here.PDF</p>
                         </div>
-                        <div className="file-preview-2 bg-white border-2 rounded-sm py-[15px] pr-[21px] pl-[23px] text-center cursor-pointer">
+                        <div className="py-4 bg-white border-2 rounded-sm  text-center cursor-pointer">
                             <Image src={fileCrossIcon} alt="" className="inline-block" />
                             <p>your-file-here.PDF</p>
                         </div>
-                        <div className="file-preview-3 bg-white border-2 rounded-sm py-[15px] pr-[21px] pl-[23px] text-center cursor-pointer">
+                        <div className="py-4 bg-white border-2 rounded-sm  text-center cursor-pointer">
                             <Image src={fileCrossIcon} alt="" className="inline-block" />
                             <p>your-file-here.PDF</p>
                         </div>

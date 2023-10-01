@@ -6,7 +6,7 @@ import calenderIcon from "../public/assets/calender-icon.svg";
 import teamIcon from "../public/assets/team-icon.svg";
 import policyIcon from "../public/assets/policy-icon.svg";
 import AddNewLeaveButton from "./AddNewLeaveButton";
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
 
 const Sidebar = () => {
     return (
@@ -16,7 +16,7 @@ const Sidebar = () => {
                 <AddNewLeaveButton />
 
                 {/*All sidebar menu */}
-                <div>
+                <Box>
                     <Button className=" w-full dashboard-menu py-[10px]  hover:bg-[#538DFF4D] mb-2 pl-6 flex justify-start gap-6 items-center">
                         <Image src={dashboardIcon} alt="" />
                         <span>Dashboard</span>
@@ -33,7 +33,7 @@ const Sidebar = () => {
                         <Image src={policyIcon} alt="" />
                         <span className="font-medium">Leave Policy</span>
                     </Button>
-                </div>
+                </Box>
             </div>
         </div>
     )

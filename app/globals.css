@@ -19,18 +19,10 @@
   background-position: 10px center;
 }
 
-.MuiPickersCalendarHeader-root {
-  background-color: white;
+.application-form {
+  position: relative;
 }
 
-.MuiDateCalendar-root {
-  background-color: white;
-}
-
-.MuiTextField-root {
-}
-
-.MuiFilledInput-root {
-  padding: 0;
-  border: none;
+.application-form::before {
+  content: "";
 }

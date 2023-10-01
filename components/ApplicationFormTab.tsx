@@ -55,7 +55,7 @@ export default function ApplicationFormTab() {
     return (
         <Box sx={{ width: '100%', }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingLeft: '80px' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant=''>
                     <Tab label="New Leave" {...a11yProps(0)} />
                     <Tab label="Leave Status" {...a11yProps(1)} />
                     <Tab label="Balance" {...a11yProps(2)} />

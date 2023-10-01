@@ -9,11 +9,8 @@ import MainDashboardContent from './MainDashboardContent'
 
 const DashboardArea = () => {
 
-
-
-
     return (
-        <Box  >
+        <Box >
             <Container maxWidth="xl">
                 <Grid container>
                     <Grid item md={2}>
